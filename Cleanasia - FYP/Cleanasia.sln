@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cleanasia", "Cleanasia.csproj", "{AEE65317-FB78-4B80-ABAE-BFDB290CF798}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEE65317-FB78-4B80-ABAE-BFDB290CF798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE65317-FB78-4B80-ABAE-BFDB290CF798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE65317-FB78-4B80-ABAE-BFDB290CF798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE65317-FB78-4B80-ABAE-BFDB290CF798}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7367D52-E8F7-425B-86CB-8E0175B22DFA}
+	EndGlobalSection
+EndGlobal
