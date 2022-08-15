@@ -15,12 +15,25 @@ namespace Cleanasia.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
+            builder.ConfigureServices((context, services) =>
+            {
                 services.AddDbContext<CleanasiaContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("DefaultConnection")));
 
-                services.AddDefaultIdentity<CleanasiaUser>(options => {
+                //services.AddDefaultIdentity<CleanasiaUser, IdentityRole>(options =>
+                //{
+                //    options.SignIn.RequireConfirmedAccount = false;
+                //    options.Password.RequireLowercase = false;
+                //    options.Password.RequireUppercase = false;
+                //    options.Password.RequireNonAlphanumeric = false;
+                //}).AddDefaultUI()
+                // .AddEntityFrameworkStores<CleanasiaContext>()
+                // .AddDefaultTokenProviders();
+                //services.AddControllersWithViews();
+                //services.AddRazorPages();
+
+                services.AddIdentity<CleanasiaUser, IdentityRole>(options => {
                     options.SignIn.RequireConfirmedAccount = false;
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
@@ -28,7 +41,9 @@ namespace Cleanasia.Areas.Identity
                 }).AddDefaultUI()
                  .AddEntityFrameworkStores<CleanasiaContext>()
                  .AddDefaultTokenProviders();
-            });
+				services.AddControllersWithViews();
+				services.AddRazorPages();
+			});
         }
     }
 }
