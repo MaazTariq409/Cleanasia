@@ -1,6 +1,10 @@
 ﻿@page
 @model RegisterModel
 
+@{
+    var roles = (List<IdentityRole>)ViewData["roles"]; 
+}
+
 <h1>@ViewData["Title"]</h1>
 
 <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
@@ -36,7 +40,6 @@
 												<span asp-validation-for="Input.LastName" class="text-danger"></span>
 											</div>
 										</div>
-
 									</div>
 									<div class="form-group">
 										<label asp-for="Input.Address"></label>
@@ -52,6 +55,12 @@
 										<label asp-for="Input.CNIC"></label>
 										<input asp-for="Input.CNIC" class="form-control" />
 										<span asp-validation-for="Input.CNIC" class="text-danger"></span>
+									</div>
+									<div class="form-group">
+										<label asp-for="Input.Role"></label>
+										<select asp-for="Input.Role" class="form-control" asp-items='new SelectList(roles,"Id","Name")'>
+										</select>
+										<span asp-validation-for="Input.Role" class="text-danger"></span>
 									</div>
 									<div class="form-group">
 										<label asp-for="Input.Password"></label>
@@ -77,90 +86,3 @@
 @section Scripts {
 	<partial name="_ValidationScriptsPartial" />
 }
-
-
-	@*<form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-		<section class="h-100 bg-light">
-			<div class="container py-5 h-100">
-				<div class="row d-flex justify-content-center align-items-center h-100">
-					<div class="col">
-						<div class="card card-registration my-4">
-							<div class="row g-0">
-								<div class="col-xl-6 d-none d-xl-block">
-									<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
-									 alt="Sample photo" class="img-fluid"
-									 style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
-								</div>
-								<div class="col-xl-6">
-									<div class="card-body p-md-5 text-black">
-										<h3 class="mb-5 text-uppercase">SignUp</h3>
-										<div class="row">
-											<div class="col-md-6 mb-4">
-												<div class="form-outline">
-													<label class="form-label" for="form3Example1m">First name</label>
-													<input type="text" id="form3Example1m" name="FirstName" class="form-control form-control-lg" />
-												</div>
-											</div>
-											<div class="col-md-6 mb-4">
-												<div class="form-outline">
-													<label class="form-label" for="form3Example1n">Last name</label>
-													<input type="text" id="form3Example1n" name="LastName" class="form-control form-control-lg" />
-												</div>
-											</div>
-										</div>
-
-										<div class="form-outline mb-4">
-											<label class="form-label" for="form3Example8">Address</label>
-											<input type="text" id="form3Example8" name="Address" class="form-control form-control-lg" />
-										</div>
-
-										<div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-											<h6 class="mb-0 me-4">Gender: </h6>
-
-											<div class="form-check form-check-inline mb-0 me-4">
-												<input class="form-check-input" type="radio" name="Gender" id="femaleGender"
-												   value="Female" />
-												<label class="form-check-label" for="femaleGender"> Female</label>
-											</div>
-
-											<div class="form-check form-check-inline mb-0 me-4">
-												<input class="form-check-input" type="radio" name="Gender" id="maleGender"
-												   value="Male" />
-												<label class="form-check-label" for="maleGender"> Male</label>
-											</div>
-
-										</div>
-
-										<div class="form-outline mb-4">
-											<label class="form-label" for="form3Example9">CNIC number</label>
-											<input type="text" id="form3Example9" name="CNIC" class="form-control form-control-lg" />
-										</div>
-
-										<div class="form-outline mb-4">
-											<label class="form-label" for="form3Example97">Email ID</label>
-											<input type="text" id="form3Example97" name="Email" class="form-control form-control-lg" />
-										</div>
-
-										<div class="form-outline mb-4">
-											<label class="form-label" for="form3Example90">Password</label>
-											<input type="text" id="form3Example90" name="Password" class="form-control form-control-lg" />
-										</div>
-
-										<div class="form-outline mb-4">
-											<label class="form-label" for="form3Example99">Confirm password</label>
-											<input type="text" id="form3Example99" class="form-control form-control-lg" />
-										</div>
-
-										<div class="d-flex justify-content-end pt-3">
-											<button type="submit" class="btn btn-warning btn-dark ms-2">Submit</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</form>*@

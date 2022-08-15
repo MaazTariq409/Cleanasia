@@ -21,18 +21,6 @@ namespace Cleanasia.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("DefaultConnection")));
 
-                //services.AddDefaultIdentity<CleanasiaUser, IdentityRole>(options =>
-                //{
-                //    options.SignIn.RequireConfirmedAccount = false;
-                //    options.Password.RequireLowercase = false;
-                //    options.Password.RequireUppercase = false;
-                //    options.Password.RequireNonAlphanumeric = false;
-                //}).AddDefaultUI()
-                // .AddEntityFrameworkStores<CleanasiaContext>()
-                // .AddDefaultTokenProviders();
-                //services.AddControllersWithViews();
-                //services.AddRazorPages();
-
                 services.AddIdentity<CleanasiaUser, IdentityRole>(options => {
                     options.SignIn.RequireConfirmedAccount = false;
                     options.Password.RequireLowercase = false;

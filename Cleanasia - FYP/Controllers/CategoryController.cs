@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using System.IO;
 using Cleanasia.Data;
 using Cleanasia.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cleanasia.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly CleanasiaContext _context;
