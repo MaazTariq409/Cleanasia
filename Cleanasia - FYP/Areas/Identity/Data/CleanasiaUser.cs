@@ -25,5 +25,7 @@ namespace Cleanasia.Areas.Identity.Data
         [PersonalData]
         [Column(TypeName = "nvarchar(100)")]
         public string CNIC { get; set; }
+
+        public string Role { get; set; }
     }
 }

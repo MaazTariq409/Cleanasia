@@ -24,4 +24,9 @@
     <Folder Include="wwwroot\uploadsPic\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Views\Role\Create.cshtml" />
+    <None Include="Views\Role\Index.cshtml" />
+  </ItemGroup>
+
 </Project>
