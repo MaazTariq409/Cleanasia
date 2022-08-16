@@ -16,8 +16,8 @@
 	<link rel="stylesheet" href="~/theme/css/lightbox.min.css">
 	<link href="~/theme/css/responsive.css" rel="stylesheet">
 
-@*	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="~/css/site.css" />*@
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" />
 
 </head>
 <body>
@@ -25,18 +25,19 @@
 		<!---header top---->
 		<div class="top-header">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-					</div>
-					<div class="col-md-6">
+				<div class="row1">
+					<div class="col-md-10">
 						<div class="social-grid">
-							<ul class="list-unstyled text-right">
+							<ul class="list-unstyled text-left">
 								<li><a><i class="fa fa-facebook"></i></a></li>
 								<li><a><i class="fa fa-twitter"></i></a></li>
 								<li><a><i class="fa fa-linkedin"></i></a></li>
 								<li><a><i class="fa fa-instagram"></i></a></li>
 							</ul>
 						</div>
+					</div>
+					<div class="col-md-2">
+						<partial name="_LoginPartial" />
 					</div>
 				</div>
 			</div>
@@ -49,7 +50,7 @@
 						<div class="col-md-2 col-sm-6 col-xs-6">
 							<div id="logo">
 								@*								<a href="index.html"><img src="images/logo.png" alt="logo"></a>*@
-								<a href="index.html"><span>vacay</span>home</a>
+								<a asp-area="" asp-controller="Home" asp-action="Index"><span>Clean</span>Asia</a>
 							</div>
 						</div>
 						<div class="col-sm-6 visible-sm">
@@ -68,8 +69,8 @@
 								</div>
 								<div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 									<ul class="list-unstyled nav1 cl-effect-10">
-										<li><a data-hover="Home" class="active"><span>Home</span></a></li>
-										<li><a data-hover="About" href="about.html"><span>About</span></a></li>
+										<li><a data-hover="Home" class="active" asp-area="" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
+										<li><a data-hover="About" asp-area="" asp-controller="Home" asp-action="Privacy"><span>Privacy</span></a></li>
 										<li><a data-hover="Rooms" href="rooms.html"><span>Rooms</span></a></li>
 										<li><a data-hover="Gallery" href="gallery.html"><span>Gallery</span></a></li>
 										<li><a data-hover="Dinning" href="dinning.html"><span>Dinning</span></a></li>
@@ -92,12 +93,6 @@
 				@RenderBody()
 			</main>
 		</div>
-
-		@*		<footer class="border-top footer text-muted">
-		<div class="container">
-		&copy; 2022 - Cleanasia - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-		</div>
-		</footer>*@
 
 		<footer>
 			<div class="container">
@@ -161,7 +156,7 @@
 				</div>
 
 				<div class="copyright">
-					&copy; 2017 All right reserved. Designed by <a href="http://www.themevault.net/" target="_blank">ThemeVault.</a>
+					&copy; 2022 - Cleanasia - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
 				</div>
 
 			</div>
