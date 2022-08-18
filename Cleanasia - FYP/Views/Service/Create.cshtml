@@ -44,7 +44,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="picture" class="control-label"></label>
-                <img style="height:auto" id="output" class="form-control" placeholder="Upload Photo" />
+                <img style="height:auto !important" id="output" class="form-control" placeholder="Upload Photo" />
                 <input type="file" name="formFile" accept="image/*" onchange="loadFile(event)">
                 <span asp-validation-for="picture" class="text-danger"></span>
             </div>
