@@ -25,12 +25,12 @@
 		<!---header top---->
 		<div class="container-fluid">
 		<div class="col-lg-6 text-center text-lg-right">
-@*			<div class="d-inline-flex align-items-center">
+			<div class="d-inline-flex align-items-center">
 				@if (User.IsInRole("Admin"))
 				{
-					<a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Administration</a>
+					<a class="nav-link text-dark" asp-area="" asp-controller="Service" asp-action="Index">Administration</a>
 				}
-			</div>*@
+			</div>
 			<div class="d-inline-flex align-items-right">
 				<div class="btn-group">
 					<button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
@@ -48,7 +48,6 @@
 					<div class="row">
 						<div class="col-md-2 col-sm-6 col-xs-6">
 							<div id="logo">
-								@*								<a href="index.html"><img src="images/logo.png" alt="logo"></a>*@
 								<a asp-area="" asp-controller="Home" asp-action="Index"><span>Clean</span>Asia</a>
 							</div>
 						</div>
@@ -57,26 +56,13 @@
 						</div>
 						<div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
 							<nav class="navbar navbar-default">
-								<div class="navbar-header page-scroll">
-									<button data-target=".navbar-ex1-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-
-								</div>
 								<div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 									<ul class="list-unstyled nav1 cl-effect-10">
 										<li><a data-hover="Home" class="active" asp-area="" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
-										<li><a data-hover="About" asp-area="" asp-controller="Home" asp-action="Privacy"><span>Privacy</span></a></li>
-										
-										<li><a data-hover="Gallery" href="gallery.html"><span>Gallery</span></a></li>
-										
 										<li><a data-hover="News" href="news.html"><span>News</span></a></li>
 										<li><a data-hover="Contact Us" href="contact.html"><span>contact Us</span></a></li>
+										<li><a data-hover="Privacy" asp-area="" asp-controller="Home" asp-action="Privacy"><span>Privacy</span></a></li>
 									</ul>
-
 								</div>
 							</nav>
 						</div>
@@ -100,9 +86,8 @@
 						<div class="footer-details">
 							<h4>explore</h4>
 							<ul class="list-unstyled footer-links">
-								<li class="active"><a>Home</a></li>
+								<li><a>Home</a></li>
 								<li><a href="about.html">About</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
 								<li> <a href="news.html">News</a></li>
 								<li> <a href="contact.html">Contact</a></li>
 							</ul>
@@ -125,13 +110,6 @@
 									<p><a href="mailto:demo@info.com"> demo@info.com</a></p>
 								</li>
 							</ul>
-							<div class="footer-social-icon">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-instagram"></i></a>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-								<a href="#"><i class="fa fa-youtube-play"></i></a>
-							</div>
 						</div>
 					</div>
 				</div>

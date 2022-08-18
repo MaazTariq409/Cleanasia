@@ -1,7 +1,8 @@
-﻿<!doctype html>
+﻿
+<!doctype html>
 <html lang="en">
 <head>
-	<title>Sidebar 09</title>
+	<title>Sidebar 02</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,63 +11,57 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="~/AdminTheme/css/style.css">
 
-	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
 
 	<div class="wrapper d-flex align-items-stretch">
 		<nav id="sidebar">
-			<div class="custom-menu">
-				<button type="button" id="sidebarCollapse" class="btn btn-primary">
-				</button>
-			</div>
-			<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
-				<div class="user-logo">
-					<div class="img" style="background-image: url(images/logo.jpg);"></div>
-					<h3>Catriona Henderson</h3>
-				</div>
-			</div>
-			<ul class="list-unstyled components mb-5">
-				<li class="active">
-					<a asp-area="" asp-controller="service" asp-action="Index"><span class="fa fa-home mr-3"></span> Home</a>
-				</li>
-				<li>
-					<a href="#"><span class="fa fa-download mr-3 notif"><small class="d-flex align-items-center justify-content-center">5</small></span> Download</a>
-				</li>
-				<li>
-					<a href="#"><span class="fa fa-gift mr-3"></span> Gift Code</a>
-				</li>
-				<li>
-					<a href="#"><span class="fa fa-trophy mr-3"></span> Top Review</a>
-				</li>
-				<li>
-					<a href="#"><span class="fa fa-cog mr-3"></span> Settings</a>
-				</li>
-				<li>
-					<a href="#"><span class="fa fa-support mr-3"></span> Support</a>
-				</li>
-				<li>
-					<a href="#"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
-				</li>
-			</ul>
+			<div class="p-4 pt-5">
+				<h1><a asp-controller="Home" asp-action="Index" class="logo">Home</a></h1>
+				<ul class="list-unstyled components mb-5">
+					<li>
+						<a href="#">About</a>
+					</li>
+					<li>
+						<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+						<ul class="collapse list-unstyled" id="pageSubmenu">
+							<li>
+								<a href="#">Page 1</a>
+							</li>
+							<li>
+								<a href="#">Page 2</a>
+							</li>
+							<li>
+								<a href="#">Page 3</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Portfolio</a>
+					</li>
+					<li>
+						<a href="#">Contact</a>
+					</li>
+				</ul>
 
+			</div>
 		</nav>
 
-		<div style="max-width:100%; padding-top: 75px;" class="container">
-			<main role="main" class="pb-3">
-				@RenderBody()
-			</main>
+		<!-- Page Content  -->
+		<div id="content" class="p-4 p-md-5 pt-5">
+			<div style="max-width:100%" class="container">
+				<main role="main" class="pb-3">
+					@RenderBody()
+				</main>
+			</div>
 		</div>
 	</div>
+
+
 
 	<script src="~/AdminTheme/js/jquery.min.js"></script>
 	<script src="~/AdminTheme/js/popper.js"></script>
 	<script src="~/AdminTheme/js/bootstrap.min.js"></script>
-	<script src="~/AdminTheme/js/main.js"></script>
-
-	<script src="~/lib/jquery/dist/jquery.min.js"></script>
-	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/AdminTheme/main.js"></script>
 </body>
 </html>
