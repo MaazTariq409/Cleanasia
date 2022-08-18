@@ -27,5 +27,6 @@ namespace Cleanasia.Data
         public DbSet<CategoryModel> category { get; set; }
 
         public DbSet<ServiceModel> Service { get; set; }
+        public DbSet<ContactUsModel> contactUs { get; set; }
     }
 }
