@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Service Orders</h1>
+<h1>Booked Services</h1>
 
 <p>
 </p>
@@ -28,13 +28,10 @@
                 @Html.DisplayNameFor(model => model.Address)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.StartingDateTime)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Hours)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartTime)
             </th>
             <th></th>
         </tr>
@@ -58,13 +55,10 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.StartingDateTime)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Hours)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartTime)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

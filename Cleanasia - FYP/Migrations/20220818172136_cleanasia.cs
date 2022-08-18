@@ -61,8 +61,7 @@ namespace Cleanasia.Migrations
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Phone = table.Column<int>(type: "int", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StartingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StartingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartingDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Hours = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

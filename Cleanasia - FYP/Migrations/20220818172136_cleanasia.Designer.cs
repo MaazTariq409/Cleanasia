@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cleanasia.Migrations
 {
     [DbContext(typeof(CleanasiaContext))]
-    [Migration("20220818145622_cleanasia")]
+    [Migration("20220818172136_cleanasia")]
     partial class cleanasia
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -194,10 +194,7 @@ namespace Cleanasia.Migrations
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("StartingDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("StartingTime")
+                    b.Property<DateTime>("StartingDateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

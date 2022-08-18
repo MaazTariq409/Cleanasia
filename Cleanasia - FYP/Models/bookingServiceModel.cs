@@ -11,7 +11,5 @@ namespace Cleanasia.Models
         public string Address { get; set; }
         public DateTime StartingDateTime { get; set; }
         public int Hours { get; set; }
-        public string StartDate => StartingDateTime.ToString("MM/dd/yyyy");
-        public string StartTime => StartingDateTime.ToString("hh:mm:tt");
     }
 }

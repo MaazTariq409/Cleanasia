@@ -16,6 +16,10 @@ namespace Cleanasia.Controllers
             _context = context;
         }
 
+        public IActionResult Index()
+        {
+            return View(_context.bookingService.ToList());
+        }
         public IActionResult Create()
         {
             BookingViewModel productViewModel = new BookingViewModel();

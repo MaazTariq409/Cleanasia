@@ -192,10 +192,7 @@ namespace Cleanasia.Migrations
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("StartingDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("StartingTime")
+                    b.Property<DateTime>("StartingDateTime")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

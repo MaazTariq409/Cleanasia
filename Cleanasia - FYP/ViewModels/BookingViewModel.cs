@@ -13,8 +13,8 @@ namespace Cleanasia.ViewModels
         public int Phone { get; set; }
         public string Address { get; set; }
         public int Hours { get; set; }
-        public string StartDate { get; set; }
-        public string StartTime { get; set; }
-        public DateTime StartingDateTime => DateTime.ParseExact($"(StartDate) (StartTime)", "mm:dd:yyyy hh:mm:tt", CultureInfo.GetCultureInfo("en-US"));
+        public DateTime StartingDateTime { get; set; }
+
+        //public DateTime StartingDateTime => DateTime.ParseExact($"(StartDate) (StartTime)", "mm:dd:yyyy hh:mm:tt", CultureInfo.GetCultureInfo("en-US"));
     }
 }
