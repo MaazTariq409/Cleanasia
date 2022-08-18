@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <script>
@@ -35,7 +36,7 @@
             </div>
              <div class="form-group">
                 <label asp-for="picture" class="control-label"></label>
-                <img style="height:auto" src="../../uploadsPic/@Model.picture" id="output" class="form-control" placeholder="Upload Photo" />
+                <img style="height:auto !important" src="../../uploadsPic/@Model.picture" id="output" class="form-control" placeholder="Upload Photo" />
                 <input type="file" name="formFile" accept="image/*" onchange="loadFile(event)">
                 <span asp-validation-for="picture" class="text-danger"></span>
             </div>
@@ -51,6 +52,6 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@

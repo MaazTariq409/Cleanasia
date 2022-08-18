@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h1>Delete</h1>
@@ -39,7 +40,7 @@
             @Html.DisplayNameFor(model => model.picture)
         </dt>
         <dd class = "col-sm-10">
-            <img style="height:200px; width:400px" src="../../uploadsPic/@Model.picture" id="output" class="form-control" placeholder="Upload Photo" />
+            <img style="height:200px !important; width:400px" src="../../uploadsPic/@Model.picture" id="output" class="form-control" placeholder="Upload Photo" />
         </dd>
     </dl>
     

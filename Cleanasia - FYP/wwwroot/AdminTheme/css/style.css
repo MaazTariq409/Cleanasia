@@ -1357,7 +1357,8 @@ pre {
     border: 1px solid #dee2e6; }
   .table-bordered thead th,
   .table-bordered thead td {
-    border-bottom-width: 2px; }
+    border-bottom-width: 2px;
+  }
 
 .table-borderless th,
 .table-borderless td,
@@ -8312,7 +8313,7 @@ a[data-toggle="collapse"] {
   color: rgba(255, 255, 255, 0.5); }
 
 .form-control {
-  height: 40px !important;
+  height: 200px !important;
   background: #fff;
   color: #000;
   font-size: 13px;

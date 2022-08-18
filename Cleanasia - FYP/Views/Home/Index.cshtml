@@ -18,19 +18,25 @@
 		<div class="item active">
 			<img src="~/theme/images/banner.png" style="width:100%; height: 500px" alt="First slide">
 			<div class="carousel-caption">
-				<h1>vacayhome<br> spa & Resort</h1>
+				<h1>Cleanasia<br>Services Providers</h1>
 			</div>
 		</div>
 		<div class="item">
 			<img src="~/theme/images/banner2.png" style="width:100%; height: 500px" alt="Second slide">
 			<div class="carousel-caption">
-				<h1>vacayhome<br> spa & Resort</h1>
+				<h1>headline</h1>
+				<p class="container">
+
+				</p>
 			</div>
 		</div>
 		<div class="item">
 			<img src="~/theme/images/banner3.png" style="width:100%; height: 500px" alt="Third slide">
 			<div class="carousel-caption">
-				<h1>vacayhome<br> spa & Resort</h1>
+				<h1>headline</h1>
+				<p class="container">
+
+				</p>
 			</div>
 		</div>
 
@@ -50,7 +56,7 @@
 					<div class="service-image">
 						<img alt="image" class="img-responsive" src="~/theme/images/icons/wifi.png">
 					</div>
-					<h4><a>free wifi</a></h4>
+					<h4><a>Trusted Employees</a></h4>
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-3 col-xs-6 width-50">
@@ -58,7 +64,7 @@
 					<div class="service-image">
 						<img alt="image" class="img-responsive" src="~/theme/images/icons/key.png">
 					</div>
-					<h4><a>room service</a></h4>
+					<h4><a>Better Services</a></h4>
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-3 col-xs-6 mt-25">
@@ -66,7 +72,7 @@
 					<div class="service-image">
 						<img alt="image" class="img-responsive" src="~/theme/images/icons/car.png">
 					</div>
-					<h4><a>free parking</a></h4>
+					<h4><a>immediate Response</a></h4>
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-3 col-xs-6 mt-25">
@@ -142,81 +148,30 @@
 	</div>
 </section>
 <!--End-->
-<!----resort-overview--->
+
+<!-- Services -->
 <section class="resort-overview-block">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
-				<div class="side-A">
-					<div class="product-thumb">
-						<div class="image">
-							<a><img src="images/category1.png" class="~/theme/img-responsive" alt="image"></a>
+	<div class="latest-products">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div style="padding-bottom: 50px;" class="section-heading">
+						<h1>Frequently Used Services</h1>
+					</div>
+				</div>
+				@foreach (var item in Model)
+				{
+					<div class="col-md-4">
+						<div class="product-item">
+							<a href="#"><img src="../../uploadsPic/@item.picture" height="200" alt=""></a>
+							<div class="down-content">
+								<a href="#"><h4>@item.Name</h4></a>
+								<p>@item.Discription</p>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="side-B">
-					<div class="product-desc-side">
-						<h3><a>luxury spa</a></h3>
-						<p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
-						<div class="links"><a href="single-blog.html">Read more</a></div>
-					</div>
-				</div>
+				}
 			</div>
-			<div class="clear"></div>
-			<div class="col-md-6 col-sm-12 col-xs-12 remove-padd-left">
-				<div class="side-A">
-					<div class="product-thumb">
-						<div class="image">
-							<a><img alt="image" class="img-responsive" src="~/theme/images/category2.png"></a>
-						</div>
-					</div>
-				</div>
-				<div class="side-B">
-					<div class="product-desc-side">
-						<h3><a>Beatusish ingl</a></h3>
-						<p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
-						<div class="links"><a href="single-blog.html">Read more</a></div>
-					</div>
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
-				<div class="side-A">
-					<div class="product-desc-side">
-						<h3><a>luxury room</a></h3>
-						<p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
-						<div class="links"><a href="single-blog.html">Read more</a></div>
-					</div>
-				</div>
-
-				<div class="side-B">
-					<div class="product-thumb">
-						<div class="image txt-rgt">
-							<a class="arrow-left"><img src="~/theme/images/category3.png" class="img-responsive" alt="imaga"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clear"></div>
-			<div class="col-md-6 col-sm-12 col-xs-12 remove-padd-left">
-				<div class="side-A">
-					<div class="product-desc-side">
-						<h3><a>heaven seanery</a></h3>
-						<p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
-						<div class="links"><a href="single-blog.html">Read more</a></div>
-					</div>
-				</div>
-
-				<div class="side-B">
-					<div class="product-thumb txt-rgt">
-						<div class="image">
-							<a class="arrow-left"><img src="~/theme/images/category4.png" class="img-responsive" alt="imaga"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-
 		</div>
 	</div>
 </section>
@@ -288,70 +243,3 @@
 	</div>
 	<div class="clearfix"></div>
 </section>
-
-<!---blog block--->
-<section class="blog-block">
-	<div class="container">
-		<div class="row offspace-45">
-			<div class="view-set-block">
-				<div class="col-md-6 col-sm-6 col-xs-12">
-					<div class="event-blog-image">
-						<img alt="image" class="img-responsive" src="~/theme/images/blog1.png">
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
-					<div class="event-blog-details">
-						<h4><a href="single-blog.html">Lorem ipsum dolor sit amet</a></h4>
-						<h5>Post By Admin <a><i aria-hidden="true" class="fa fa-heart-o fa-lg"></i>Likes</a><a><i aria-hidden="true" class="fa fa-comment-o fa-lg"></i>comments</a></h5>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu felis quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornare turpis neque, eu commodo sapien porta sed. Nam ut ante turpis. Nam arcu odio, scelerisque a vehicula vitae, auctor sit amet lectus. </p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu felis quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornard hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus non maximus vitae, porttitor eget neque. Donec tristique nunc facilisis, dapibus libero ac</p>
-						<a class="btn btn-default" href="single-blog.html">Read More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row offspace-45">
-			<div class="view-set-block">
-				<div class="col-md-6 col-sm-6 col-xs-12">
-					<div class="event-blog-image">
-						<img alt="image" class="img-responsive" src="~/theme/images/blog2.png">
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
-					<div class="event-blog-details">
-						<h4><a href="single-blog.html">Lorem ipsum dolor sit amet</a></h4>
-						<h5>Post By Admin <a><i aria-hidden="true" class="fa fa-heart-o fa-lg"></i>Likes</a><a><i aria-hidden="true" class="fa fa-comment-o fa-lg"></i>comments</a></h5>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu felis quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornare turpis neque, eu commodo sapien porta sed. Nam ut ante turpis. Nam arcu odio, scelerisque a vehicula vitae, auctor sit amet lectus. </p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu felis quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornard hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus non maximus vitae, porttitor eget neque. Donec tristique nunc facilisis, dapibus libero ac</p>
-						<a class="btn btn-default" href="single-blog.html">Read More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- Banner ends here-->
-@*<div class="latest-products">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="section-heading">
-					<h2>Frequently Used Services</h2>
-				</div>
-			</div>
-			@foreach (var item in Model)
-			{
-				<div class="col-md-4">
-					<div class="product-item">
-						<a href="#"><img src="../../uploadsPic/@item.picture" height="200" alt=""></a>
-						<div class="down-content">
-							<a href="#"><h4>@item.Name</h4></a>
-							<p>@item.Discription</p>
-						</div>
-					</div>
-				</div>
-			}
-		</div>
-	</div>
-</div>*@

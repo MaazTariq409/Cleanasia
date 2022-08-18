@@ -25,7 +25,8 @@ namespace Cleanasia.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
         public DbSet<CategoryModel> category { get; set; }
-
         public DbSet<ServiceModel> Service { get; set; }
+        public DbSet<ContactUsModel> contactUs { get; set; }
+        public DbSet<bookingServiceModel> bookingService { get; set; }
     }
 }
