@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Cleanasia.Migrations
 {
-    public partial class update : Migration
+    public partial class cleanasia : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,6 +52,25 @@ namespace Cleanasia.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "bookingService",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone = table.Column<int>(type: "int", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StartingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Hours = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_bookingService", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "category",
                 columns: table => new
                 {
@@ -64,6 +83,21 @@ namespace Cleanasia.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_category", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "contactUs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_contactUs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -256,6 +290,12 @@ namespace Cleanasia.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "bookingService");
+
+            migrationBuilder.DropTable(
+                name: "contactUs");
 
             migrationBuilder.DropTable(
                 name: "Service");
