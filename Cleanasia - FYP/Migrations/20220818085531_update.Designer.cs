@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cleanasia.Migrations
 {
     [DbContext(typeof(CleanasiaContext))]
-    [Migration("20220815154305_cleanasia")]
-    partial class cleanasia
+    [Migration("20220818085531_update")]
+    partial class update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
