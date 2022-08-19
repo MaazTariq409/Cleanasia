@@ -1,20 +1,22 @@
 ﻿@model IEnumerable<Cleanasia.Models.ServiceModel>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Services</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ProductCategory)
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCategoryID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -35,7 +37,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ProductCategory.ID)
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductCategoryID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -48,11 +53,6 @@
             </td>
             <td>
                 <img style="height:200px !important; width:300px" src="../../uploadsPic/@item.picture" id="output" class="form-control" placeholder="Upload Photo" />
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }

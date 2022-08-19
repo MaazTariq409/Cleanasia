@@ -29,6 +29,12 @@ namespace Cleanasia.Controllers
             return View(await CleanasiaContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Index2()
+        {
+            var CleanasiaContext = _context.Service.Include(s => s.ProductCategory);
+            return View(await CleanasiaContext.ToListAsync());
+        }
+
         // GET: Service/Details/5
         public async Task<IActionResult> Details(int? id)
         {

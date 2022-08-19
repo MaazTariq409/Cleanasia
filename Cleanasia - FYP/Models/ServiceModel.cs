@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cleanasia.Models
@@ -12,7 +13,10 @@ namespace Cleanasia.Models
         public virtual CategoryModel ProductCategory { get; set; }
         public string Name { get; set; }
         public string Discription { get; set; }
-        public int PhoneNumber { get; set; }
+        [PersonalData]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
         public string picture { get; set; }
     }
 }
