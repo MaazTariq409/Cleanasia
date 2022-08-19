@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Cleanasia.Models.ServiceModel>
+
+@{
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Services -->
+<section class="resort-overview-block">
+	<div class="latest-products">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div style="padding-bottom: 50px;" class="section-heading">
+						<h1>Services</h1>
+					</div>
+				</div>
+				@foreach (var item in Model)
+				{
+					<div class="col-md-4">
+						<div class="product-item">
+							<a href="#"><img src="../../uploadsPic/@item.picture" height="200" alt=""></a>
+							<div class="down-content">
+								<a href="#"><h4>@item.Name</h4></a>
+								<p>@item.Discription</p>
+                                <p>@item.PhoneNumber</p>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</section>

@@ -37,5 +37,10 @@ namespace Cleanasia.Controllers
             }
             return View(booking);
         }
+
+        public IActionResult CheckOut()
+        {
+            return View();
+        }
     }
 }

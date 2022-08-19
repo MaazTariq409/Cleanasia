@@ -28,5 +28,6 @@ namespace Cleanasia.Data
         public DbSet<ServiceModel> Service { get; set; }
         public DbSet<ContactUsModel> contactUs { get; set; }
         public DbSet<bookingServiceModel> bookingService { get; set; }
+        public DbSet<CheckOutModel> CheckoutDetail { get; set; }
     }
 }
