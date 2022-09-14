@@ -24,7 +24,7 @@ namespace Cleanasia.Controllers
             return View(await _context.category.ToListAsync());
         }
 
-        public async Task<IActionResult> Index2()
+        public async Task<IActionResult> Services()
         {
             var CleanasiaContext = _context.Service.Include(s => s.ProductCategory);
             return View(await CleanasiaContext.ToListAsync());
@@ -32,6 +32,24 @@ namespace Cleanasia.Controllers
 
         public IActionResult Privacy()
         {
+            return View();
+        }
+
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ContactUs(ContactUsModel contactUs)
+        {
+            _context.Add(contactUs);
+            _context.SaveChangesAsync();
             return View();
         }
 
