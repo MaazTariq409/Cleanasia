@@ -45,7 +45,7 @@
 		<header>
 			<div class="container">
 				<div class="top-row">
-					<div class="row">
+					<div class="row align-items-center">
 						<div class="col-md-2 col-sm-6 col-xs-6">
 							<div id="logo">
 								<a asp-area="" asp-controller="Home" asp-action="Index"><span>Clean</span>Asia</a>
@@ -58,7 +58,7 @@
 							<nav class="navbar navbar-default">
 								<div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 									<ul class="list-unstyled nav1 cl-effect-10">
-										<li><a data-hover="Home" class="active" asp-area="" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
+										<li><a data-hover="Home"  asp-area="" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
 										<li><a data-hover="Services"  asp-area="" asp-controller="Home" asp-action="Services"><span>Services</span></a></li>
 										<li><a data-hover="About Us" asp-area="" asp-controller="Home" asp-action="AboutUs"><span>About Us</span></a></li>
 										<li><a data-hover="Contact Us" asp-area="" asp-controller="Home" asp-action="ContactUs"><span>contact Us</span></a></li>
@@ -67,8 +67,9 @@
 								</div>
 							</nav>
 						</div>
-						<div class="col-md-2  col-sm-4 col-xs-12 hidden-sm">
-							<div class="text-right "><button type="button" class="book-now-btn"><a asp-controller="BookingService" asp-action="Create"><span>Book Now</span></a></button>
+						<div class="col-md-2  col-sm-6 col-xs-12 hidden-sm">
+							<div class="text-right ">
+								<a asp-controller="BookingService" asp-action="Create" class="book-now-btn"><span>Book Now</span></a>
 							</div>
 						</div>
 					</div>

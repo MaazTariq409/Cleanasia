@@ -1,5 +1,6 @@
 ﻿using Cleanasia.Data;
 using Cleanasia.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.IO;
@@ -7,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Cleanasia.Controllers
 {
-	public class CheckOutController : Controller
+    [Authorize]
+    public class CheckOutController : Controller
 	{
 		private readonly CleanasiaContext _context;
 

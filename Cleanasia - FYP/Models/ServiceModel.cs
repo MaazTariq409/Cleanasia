@@ -8,9 +8,9 @@ namespace Cleanasia.Models
     {
         [Key]
         public int ID { get; set; }
-        [ForeignKey("ProductCategory")]
+        [ForeignKey("ServiceCategory")]
         public int ProductCategoryID { get; set; }
-        public virtual CategoryModel ProductCategory { get; set; }
+        public virtual CategoryModel ServiceCategory { get; set; }
         public string Name { get; set; }
         public string Discription { get; set; }
         [PersonalData]

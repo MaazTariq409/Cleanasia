@@ -2,7 +2,7 @@
 	ViewData["Title"] = "Home Page";
 }
 
-@model IEnumerable<Cleanasia.Models.CategoryModel>
+@model Cleanasia.ViewModels.ServicesViewModel
 
 <!-- Start Banner Hero -->
 
@@ -131,7 +131,7 @@
 	</div>
 </section>
 
-<!--offer block-->
+@*<!--offer block-->
 <section class="vacation-offer-block">
 	<div class="vacation-offer-bgbanner">
 		<div class="container">
@@ -147,7 +147,7 @@
 		</div>
 	</div>
 </section>
-<!--End-->
+<!--End-->*@
 
 <!-- Services -->
 <section class="resort-overview-block">
@@ -159,13 +159,13 @@
 						<h1>Frequently Used Services</h1>
 					</div>
 				</div>
-				@foreach (var item in Model)
+				@foreach (var item in Model.categories)
 				{
 					<div class="col-md-4">
 						<div class="product-item">
-							<a href="#"><img src="../../uploadsPic/@item.picture" height="200" alt=""></a>
+							<a asp-controller="Home" asp-action="Services"><img src="../../uploadsPic/@item.picture" height="200" alt=""></a>
 							<div class="down-content">
-								<a href="#"><h4>@item.Name</h4></a>
+								<a asp-controller="Home" asp-action="Services"><h4>@item.Name</h4></a>
 								<p>@item.Discription</p>
 							</div>
 						</div>

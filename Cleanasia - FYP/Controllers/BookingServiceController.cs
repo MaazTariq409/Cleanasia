@@ -1,12 +1,14 @@
 ﻿using Cleanasia.Data;
 using Cleanasia.Models;
 using Cleanasia.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Cleanasia.Controllers
 {
+    [Authorize]
     public class BookingServiceController : Controller
     {
         private readonly CleanasiaContext _context;
