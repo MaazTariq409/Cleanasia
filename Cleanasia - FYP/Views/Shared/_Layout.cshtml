@@ -24,22 +24,8 @@
 	<div id="page">
 		<!---header top---->
 		<div class="container-fluid">
-		<div class="col-lg-6 text-center text-lg-right">
-			<div class="d-inline-flex align-items-center">
-				@if (User.IsInRole("admin"))
-				{
-					<a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Administration</a>
-				}
+			<div class="col-lg-6 text-center text-lg-right">
 			</div>
-			<div class="d-inline-flex align-items-right">
-				<div class="btn-group">
-					<button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
-					<div class="dropdown-menu dropdown-menu-right">
-						<partial name="_LoginPartial" />
-					</div>
-				</div>
-			</div>
-		</div>
 		</div>
 		<!--header--->
 		<header>
@@ -51,15 +37,15 @@
 								<a asp-area="" asp-controller="Home" asp-action="Index"><span>Clean</span>Asia</a>
 							</div>
 						</div>
-						<div class="col-sm-6 visible-sm">
-							<div class="text-right"><button type="button" class="book-now-btn">Book Now</button></div>
-						</div>
+						@*						<div class="col-sm-6 visible-sm">
+						<div class="text-right"><button type="button" class="book-now-btn">Book Now</button></div>
+						</div>*@
 						<div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
 							<nav class="navbar navbar-default">
 								<div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
 									<ul class="list-unstyled nav1 cl-effect-10">
-										<li><a data-hover="Home"  asp-area="" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
-										<li><a data-hover="Services"  asp-area="" asp-controller="Home" asp-action="Services"><span>Services</span></a></li>
+										<li><a data-hover="Home" asp-area="" asp-controller="Home" asp-action="Index"><span>Home</span></a></li>
+										<li><a data-hover="Services" asp-area="" asp-controller="Home" asp-action="Services"><span>Services</span></a></li>
 										<li><a data-hover="About Us" asp-area="" asp-controller="Home" asp-action="AboutUs"><span>About Us</span></a></li>
 										<li><a data-hover="Contact Us" asp-area="" asp-controller="Home" asp-action="ContactUs"><span>contact Us</span></a></li>
 										<li><a data-hover="Privacy" asp-area="" asp-controller="Home" asp-action="Privacy"><span>Privacy</span></a></li>
@@ -67,11 +53,27 @@
 								</div>
 							</nav>
 						</div>
-						<div class="col-md-2  col-sm-6 col-xs-12 hidden-sm">
-							<div class="text-right ">
-								<a asp-controller="BookingService" asp-action="Create" class="book-now-btn"><span>Book Now</span></a>
+						<div class="col-md-2">
+							<div class="d-inline-flex align-items-center">
+								@if (User.IsInRole("admin"))
+								{
+									<a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Index">Administration</a>
+								}
+							</div>
+							<div class="d-inline-flex align-items-right">
+								<div class="btn-group">
+									<button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
+									<div class="dropdown-menu dropdown-menu-right">
+										<partial name="_LoginPartial" />
+									</div>
+								</div>
 							</div>
 						</div>
+						@*						<div class="col-md-2  col-sm-6 col-xs-12 hidden-sm">
+						<div class="text-right ">
+						<a asp-controller="BookingService" asp-action="Create" class="book-now-btn"><span>Book Now</span></a>
+						</div>
+						</div>*@
 					</div>
 				</div>
 			</div>

@@ -62,7 +62,9 @@ namespace Cleanasia.Migrations
                     Phone = table.Column<int>(type: "int", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StartingDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Hours = table.Column<int>(type: "int", nullable: false)
+                    Hours = table.Column<int>(type: "int", nullable: false),
+                    Receipt = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    picture = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -82,6 +84,20 @@ namespace Cleanasia.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_category", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CheckoutDetail",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Receipt = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    picture = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CheckoutDetail", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -214,7 +230,7 @@ namespace Cleanasia.Migrations
                     ProductCategoryID = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Discription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<int>(type: "int", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     picture = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -292,6 +308,9 @@ namespace Cleanasia.Migrations
 
             migrationBuilder.DropTable(
                 name: "bookingService");
+
+            migrationBuilder.DropTable(
+                name: "CheckoutDetail");
 
             migrationBuilder.DropTable(
                 name: "contactUs");

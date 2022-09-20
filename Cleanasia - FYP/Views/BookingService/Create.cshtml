@@ -1,61 +1,123 @@
-﻿@model Cleanasia.ViewModels.BookingViewModel
+﻿@model Cleanasia.ViewModels.ServiceListDetailViewModel
 
-<body>
-	<div id="booking" style="align-content:center !important">
-		<div class="container">
-			<div class="row">
-				<div class="booking-form">
-					<div class="form-header">
-						<h1>Book Service</h1>
-					</div>
-					<form action="Create" method="post">
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<span class="form-label">Name</span>
-									<input class="form-control" name="Name" type="text" placeholder="Enter your name">
+<script>
+	var loadFile = function(event) {
+		var output = document.getElementById('output');
+		output.src = URL.createObjectURL(event.target.files[0]);
+		output.onload = function() {
+			URL.revokeObjectURL(output.src) // free memory
+		}
+	};
+</script>
+<div id="booking" style="align-content:center !important">
+	<div class="container">
+		<div class="row">
+			<div class="row px-xl-5">
+				<div class="col-lg-6 md-5">
+					<div class="booking-form">
+						<div class="form-header">
+							<h1>Book Service</h1>
+						</div>
+
+						<form asp-action="Create" enctype="multipart/form-data" asp-controller="BookingService">
+							<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Name</span>
+										<input class="form-control" name="Name" type="text" placeholder="Enter your name">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<span class="form-label">Email</span>
+										<input class="form-control" name="Email" type="email" placeholder="Enter your email">
+									</div>
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<span class="form-label">Email</span>
-									<input class="form-control" name="Email" type="email" placeholder="Enter your email">
-								</div>
+							<div class="form-group">
+								<label asp-for="Phone"></label>
+								@*<input asp-for="Phone" placeholder="123-45-678" class="form-control" pattern="[0-9]+" title="Only Numbers Allowed " required />*@
+								<input asp-for="Phone" placeholder="03220000001" class="form-control" pattern="[0-11]+" title="Only Numbers Allowed " required />
+								<span asp-validation-for="Phone" class="text-danger"></span>
 							</div>
-						</div>
-						<div class="form-group">
-							<span class="form-label">Phone</span>
-                            <input name="Phone" placeholder="0300-4567111" class="form-control" pattern="[0-9]+" title="Only Numbers Allowed " required  />
-						</div>
-						<div class="form-group">
-							<span class="form-label">Address</span>
-							<input class="form-control" name="Address" type="text" placeholder="Enter Current Address">
-						</div>
-						<div class="row">
-							<div class="col-sm-5">
-								<div class="form-group">
-									<span class="form-label">Starting Date</span>
-									<input class="form-control" name="StartingDateTime" type="date" required>
-								</div>
+							<div class="form-group">
+								<span class="form-label">Address</span>
+								<input class="form-control" name="Address" type="text" placeholder="Enter Current Address">
 							</div>
-							<div class="col-sm-7">
-								<div class="row">
-									<div class="col-sm-4">
-										<div class="form-group">
-											<span class="form-label">Hour</span>
-											<input class="form-control" name="Hours" type="number" required>
+							<div class="row">
+								<div class="col-sm-5">
+									<div class="form-group">
+										<span class="form-label">Starting Date</span>
+										<input class="form-control" name="StartingDateTime" type="date" required>
+									</div>
+								</div>
+								<div class="col-sm-7">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="form-group">
+												<span class="form-label">Hour</span>
+												<input class="form-control" name="Hours" type="number" required>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+
+							<div class="form-group">
+								<label asp-for="Receipt" class="control-label"></label>
+								<input asp-for="Receipt" class="form-control" />
+								<span asp-validation-for="Receipt" class="text-danger"></span>
+							</div>
+
+							<div class="form-group">
+								<label asp-for="picture" class="control-label"></label>
+								<img style="height:auto !important" id="output" class="form-control" placeholder="Upload Photo" />
+								<input type="file" name="formFile" accept="image/*" onchange="loadFile(event)">
+								<span asp-validation-for="picture" class="text-danger"></span>
+							</div>
+
+							<div class="form-btn">
+								<input type="submit" value="book Now" class="btn btn-primary" />
+							</div>
+						</form>
+						@if (ViewBag.Message != null)
+						{
+							<script type="text/javascript">
+								window.onload = function() {
+									alert("@ViewBag.Message");
+								};
+							</script>
+						}
+						@*<button class="submit-btn"><a asp-controller="BookingService" asp-action="index"><span>Booked Services</span></a></button>*@
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<h5 class="section-title position-relative text-uppercase mb-4"><span>Selected Service</span></h5>
+					<div class="row bg-light p-30">
+						<div class="preview col-md-6 card">
+							<a asp-controller="Home" asp-action="Services"><img src="../../uploadsPic/@Model.Picture" height="200" alt=""></a>
+
 						</div>
-						<div class="form-btn">
-							<button class="submit-btn">Book Now</button>
+						<div class="details col-md-6 card">
+							<p class="product-title">@Model.Name</p>
+							<div class="rating">
+								<div class="stars">
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+									<span class="fa fa-star"></span>
+								</div>
+								<span class="review-no">41 reviews</span>
+							</div>
+							<p class="product-title">@Model.Description</p>
+							<p class="vote"><strong>91%</strong> of people loved this service <strong>(87 votes)</strong></p>
 						</div>
-					</form>
-					<button class="submit-btn"><a asp-controller="BookingService" asp-action="index"><span>Booked Services</span></a></button>
+					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
-</body>
+</div>

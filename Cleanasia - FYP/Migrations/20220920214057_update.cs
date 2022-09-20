@@ -7,8 +7,8 @@ namespace Cleanasia.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "PhoneNumber",
-                table: "Service",
+                name: "Phone",
+                table: "bookingService",
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -18,8 +18,8 @@ namespace Cleanasia.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<int>(
-                name: "PhoneNumber",
-                table: "Service",
+                name: "Phone",
+                table: "bookingService",
                 type: "int",
                 nullable: false,
                 defaultValue: 0,

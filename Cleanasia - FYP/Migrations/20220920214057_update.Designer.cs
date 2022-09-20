@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cleanasia.Migrations
 {
     [DbContext(typeof(CleanasiaContext))]
-    [Migration("20220819183825_checkout")]
-    partial class checkout
+    [Migration("20220920214057_update")]
+    partial class update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -209,11 +209,17 @@ namespace Cleanasia.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Receipt")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StartingDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("picture")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cleanasia.Migrations
 {
     [DbContext(typeof(CleanasiaContext))]
-    [Migration("20220818172136_cleanasia")]
+    [Migration("20220920205848_cleanasia")]
     partial class cleanasia
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,6 +122,24 @@ namespace Cleanasia.Migrations
                     b.ToTable("category");
                 });
 
+            modelBuilder.Entity("Cleanasia.Models.CheckOutModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Receipt")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("picture")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CheckoutDetail");
+                });
+
             modelBuilder.Entity("Cleanasia.Models.ContactUsModel", b =>
                 {
                     b.Property<int>("Id")
@@ -156,8 +174,8 @@ namespace Cleanasia.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductCategoryID")
                         .HasColumnType("int");
@@ -194,8 +212,14 @@ namespace Cleanasia.Migrations
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
+                    b.Property<string>("Receipt")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("StartingDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("picture")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

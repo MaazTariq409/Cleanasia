@@ -207,11 +207,17 @@ namespace Cleanasia.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Receipt")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StartingDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("picture")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
