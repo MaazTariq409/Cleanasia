@@ -335,13 +335,13 @@ namespace Cleanasia.Migrations
 
             modelBuilder.Entity("Cleanasia.Models.ServiceModel", b =>
                 {
-                    b.HasOne("Cleanasia.Models.CategoryModel", "ProductCategory")
+                    b.HasOne("Cleanasia.Models.CategoryModel", "ServiceCategory")
                         .WithMany()
                         .HasForeignKey("ProductCategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ProductCategory");
+                    b.Navigation("ServiceCategory");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -1,5 +1,6 @@
 ﻿using Cleanasia.Data;
 using Cleanasia.Models;
+using Cleanasia.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -19,14 +20,24 @@ namespace Cleanasia.Controllers
             _context = context;
         }
 
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.category.ToListAsync());
+        //}
+
         public async Task<IActionResult> Index()
         {
-            return View(await _context.category.ToListAsync());
+            ServicesViewModel productViewModel = new ServicesViewModel();
+
+            productViewModel.categories = await _context.category.ToListAsync();
+            productViewModel.services = await _context.Service.ToListAsync();
+
+            return View(productViewModel);
         }
 
         public async Task<IActionResult> Services()
         {
-            var CleanasiaContext = _context.Service.Include(s => s.ProductCategory);
+            var CleanasiaContext = _context.Service.Include(s => s.ServiceCategory);
             return View(await CleanasiaContext.ToListAsync());
         }
 

@@ -25,7 +25,7 @@ namespace Cleanasia.Controllers
         // GET: Service
         public async Task<IActionResult> Index()
         {
-            var CleanasiaContext = _context.Service.Include(s => s.ProductCategory);
+            var CleanasiaContext = _context.Service.Include(s => s.ServiceCategory);
             return View(await CleanasiaContext.ToListAsync());
         }
 
@@ -39,7 +39,7 @@ namespace Cleanasia.Controllers
             }
 
             var serviceModel = await _context.Service
-                .Include(s => s.ProductCategory)
+                .Include(s => s.ServiceCategory)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (serviceModel == null)
             {
@@ -179,7 +179,7 @@ namespace Cleanasia.Controllers
             }
 
             var serviceModel = await _context.Service
-                .Include(s => s.ProductCategory)
+                .Include(s => s.ServiceCategory)
                 .FirstOrDefaultAsync(m => m.ID == id);
             if (serviceModel == null)
             {
