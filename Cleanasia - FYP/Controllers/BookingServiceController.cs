@@ -47,7 +47,7 @@ namespace Cleanasia.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(bookingServiceModel booking)
+        public async Task<IActionResult> Create(ServiceListDetailViewModel booking)
         {
             if (ModelState.IsValid)
             {
@@ -76,12 +76,8 @@ namespace Cleanasia.Controllers
                 await _context.SaveChangesAsync();
                 ViewBag.Message = "The Booking Confirmation message will be sent via Email";
             }
-            return View(booking);
-        }
-
-        public IActionResult CheckOut()
-        {
-            return View();
+            //return View(booking);
+            return RedirectToAction("Services", "Home");
         }
     }
 }
