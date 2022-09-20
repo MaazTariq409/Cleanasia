@@ -40,6 +40,52 @@ namespace Cleanasia.Controllers
             return View(booking);
         }
 
+        //public async Task<IActionResult> ServiceDetails(int? id)
+        //{
+
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var ServiceModel = await _context.Service
+        //        .Include(p => p.ServiceCategory)
+        //        .FirstOrDefaultAsync(m => m.ID == id);
+        //    if (ServiceModel == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    ServiceListDetailViewModel ServiceViewModel = new ServiceListDetailViewModel();
+        //    ServiceViewModel.Id = ServiceModel.ID;
+        //    ServiceViewModel.Description = ServiceModel.Discription;
+        //    ServiceViewModel.Picture = ServiceModel.picture;
+        //    ServiceViewModel.Name = ServiceModel.Name;
+        //    ServiceViewModel.ProductCategoryID = ServiceModel.ProductCategoryID;
+        //    ServiceViewModel.Quantity = 1;
+
+        //    var AllProducts = await _context.Service.Include(p => p.ServiceCategory).ToListAsync();
+        //    ServiceViewModel.Products = AllProducts;
+
+        //    return View(ServiceViewModel);
+        //}
+        //public async Task<IActionResult> ProductDetail(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var serviceModel = await _context.Service
+        //        .Include(p => p.ServiceCategory)
+        //        .FirstOrDefaultAsync(m => m.ID == id);
+        //    if (serviceModel == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(serviceModel);
+        //}
+
         public IActionResult CheckOut()
         {
             return View();

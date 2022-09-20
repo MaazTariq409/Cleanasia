@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Cleanasia.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "admin")]
     public class CategoryController : Controller
     {
         private readonly CleanasiaContext _context;
