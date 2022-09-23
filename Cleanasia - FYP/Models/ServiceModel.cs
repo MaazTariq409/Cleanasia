@@ -13,9 +13,7 @@ namespace Cleanasia.Models
         public virtual CategoryModel ServiceCategory { get; set; }
         public string Name { get; set; }
         public string Discription { get; set; }
-        [PersonalData]
-        [DataType(DataType.PhoneNumber)]
-        [Display(Name = "Phone Number")]
+        [Display(Name = "Price")]
         public string price { get; set; }
         public string picture { get; set; }
     }
