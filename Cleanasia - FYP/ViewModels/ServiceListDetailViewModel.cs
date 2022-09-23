@@ -7,11 +7,10 @@ namespace Cleanasia.ViewModels
     public class ServiceListDetailViewModel
     {
         public int Id { get; set; }
-        public int Quantity { get; set; }
         public int ProductCategoryID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public decimal Price { get; set; }
+        public String Price { get; set; }
         public String Phone { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
@@ -23,5 +22,7 @@ namespace Cleanasia.ViewModels
         public string picture { get; set; }
 
         public List<ServiceModel> Products { get; set; }
+
+        public List<ServiceModel> services { get; set; }
     }
 }

@@ -163,9 +163,9 @@
 				{
 					<div class="col-md-4">
 						<div class="product-item">
-							<a asp-controller="Home" asp-action="Services"><img src="../../uploadsPic/@item.picture" height="200" alt=""></a>
+							<a asp-controller="Home" asp-action="Services" asp-route-id="@item.ID"><img src="../../uploadsPic/@item.picture" height="200" alt=""></a>
 							<div class="down-content">
-								<a asp-controller="Home" asp-action="Services"><h4>@item.Name</h4></a>
+								<a asp-controller="Home" asp-action="Services" asp-route-id="@item.ID"><h4>@item.Name</h4></a>
 								<p>@item.Discription</p>
 							</div>
 						</div>

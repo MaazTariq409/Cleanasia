@@ -16,7 +16,7 @@ namespace Cleanasia.Models
         [PersonalData]
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "Phone Number")]
-        public string PhoneNumber { get; set; }
+        public string price { get; set; }
         public string picture { get; set; }
     }
 }

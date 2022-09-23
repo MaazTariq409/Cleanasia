@@ -61,7 +61,7 @@ namespace Cleanasia.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,ProductCategoryID,Name,Discription,PhoneNumber,picture")] ServiceModel serviceModel)
+        public async Task<IActionResult> Create([Bind("ID,ProductCategoryID,Name,Discription,price,picture")] ServiceModel serviceModel)
         {
             if (ModelState.IsValid)
             {

@@ -37,8 +37,8 @@ namespace Cleanasia.Controllers
             ServiceViewModel.Description = ServiceModel.Discription;
             ServiceViewModel.Picture = ServiceModel.picture;
             ServiceViewModel.Name = ServiceModel.Name;
+            ServiceViewModel.Price = ServiceModel.price;
             ServiceViewModel.ProductCategoryID = ServiceModel.ProductCategoryID;
-            ServiceViewModel.Quantity = 1;
 
             var AllProducts = await _context.Service.Include(p => p.ServiceCategory).ToListAsync();
             ServiceViewModel.Products = AllProducts;

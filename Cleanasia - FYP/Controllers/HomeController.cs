@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Cleanasia.Controllers
@@ -27,19 +28,64 @@ namespace Cleanasia.Controllers
 
         public async Task<IActionResult> Index()
         {
-            ServicesViewModel productViewModel = new ServicesViewModel();
+            ServicesViewModel serviceViewModel = new ServicesViewModel();
 
-            productViewModel.categories = await _context.category.ToListAsync();
-            productViewModel.services = await _context.Service.ToListAsync();
+            serviceViewModel.categories = await _context.category.ToListAsync();
+            serviceViewModel.services = await _context.Service.ToListAsync();
 
-            return View(productViewModel);
+            return View(serviceViewModel);
         }
 
-        public async Task<IActionResult> Services()
+        public async Task<IActionResult> OrderList()
         {
-            var CleanasiaContext = _context.Service.Include(s => s.ServiceCategory);
-            return View(await CleanasiaContext.ToListAsync());
+            return View(await _context.bookingService.ToListAsync());
         }
+
+        public async Task<IActionResult> Services(int? id)
+        {
+            if (id == null)
+            {
+                ServiceListDetailViewModel serviceViewModel = new ServiceListDetailViewModel();
+                var AllServices = await _context.Service.Include(p => p.ServiceCategory).ToListAsync();
+                serviceViewModel.Products = AllServices;
+                return View(serviceViewModel);
+            }
+            ServiceListDetailViewModel ServiceViewModel = new ServiceListDetailViewModel();
+            var ServiceModel = await _context.Service
+                .Include(p => p.ServiceCategory)
+                .FirstOrDefaultAsync(m => m.ID == id);
+            ServiceViewModel.Description = ServiceModel.Discription;
+            ServiceViewModel.Picture = ServiceModel.picture;
+            ServiceViewModel.Name = ServiceModel.Name;
+            ServiceViewModel.Price = ServiceModel.price;
+            ServiceViewModel.ProductCategoryID = ServiceModel.ProductCategoryID;
+
+            var AllProducts = await _context.Service.Where(p => p.ID==id).ToListAsync();
+            ServiceViewModel.Products = AllProducts;
+
+            return View(ServiceViewModel);
+        }
+
+        //public async Task<IActionResult> Services(int? id)
+        //{
+
+        //    ServiceListDetailViewModel ServiceViewModel = new ServiceListDetailViewModel();
+        //    var ServiceModel = await _context.Service
+        //        .Include(p => p.ServiceCategory)
+        //        .FirstOrDefaultAsync(m => m.ID == id);
+        //    ServiceViewModel.Id = ServiceModel.ID;
+
+        //    ServiceViewModel.Description = ServiceModel.Discription;
+        //    ServiceViewModel.Picture = ServiceModel.picture;
+        //    ServiceViewModel.Name = ServiceModel.Name;
+        //    ServiceViewModel.ProductCategoryID = ServiceModel.ProductCategoryID;
+        //    ServiceViewModel.Quantity = 1;
+
+        //    var AllProducts = await _context.Service.Include(p => p.ServiceCategory).ToListAsync();
+        //    ServiceViewModel.Products = AllProducts;
+
+        //    return View(ServiceViewModel);
+        //}
 
         public IActionResult Privacy()
         {

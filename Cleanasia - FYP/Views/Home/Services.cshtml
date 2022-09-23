@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Cleanasia.Models.ServiceModel>
+﻿@model Cleanasia.ViewModels.ServiceListDetailViewModel
 
 @{
 	ViewData["Title"] = "Index2";
@@ -23,7 +23,7 @@
 <!-- Breadcrumb End -->
 <!-- Services -->
 <div class="container">
-	@foreach (var item in Model)
+	@foreach (var item in Model.Products)
 	{
 		<div class="wrapper row">
 			<div class="preview col-md-6 card">
@@ -42,11 +42,11 @@
 					<span class="review-no">41 reviews</span>
 				</div>
 				<p class="product-description">@item.Discription</p>
-				<h4 class="price">Service Charges: <span>$180</span></h4>
+				<h4 class="price">Service Charges: <span>Rs. @item.price</span></h4>
 				<p class="vote"><strong>91%</strong> of people loved this service <strong>(87 votes)</strong></p>
 				<div class="action">
 					<ul>
-						<a class="add-to-cart btn btn-default" asp-controller="BookingService" asp-action="Create" asp-route-id="@item.ID">Book Now</a>
+						<a class="add-to-cart btn btn-default" asp-controller="BookingService" asp-action="Create" asp-route-id="@item.ID">Hire</a>
 						<a href="#" class="like btn btn-default fa fa-heart"></a>
 					</ul>
 				</div>
