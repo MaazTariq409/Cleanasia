@@ -36,34 +36,36 @@ namespace Cleanasia.Controllers
             return View(serviceViewModel);
         }
 
-        public async Task<IActionResult> OrderList()
+        public async Task<IActionResult> allServices()
         {
-            return View(await _context.bookingService.ToListAsync());
-        }
+            ServiceListDetailViewModel serviceViewModel = new ServiceListDetailViewModel();
+            var AllServices = await _context.Service.Include(p => p.ServiceCategory).ToListAsync();
+            serviceViewModel.Products = AllServices;
+            return View(serviceViewModel);
 
+        }
         public async Task<IActionResult> Services(int? id)
         {
             if (id == null)
             {
-                ServiceListDetailViewModel serviceViewModel = new ServiceListDetailViewModel();
-                var AllServices = await _context.Service.Include(p => p.ServiceCategory).ToListAsync();
-                serviceViewModel.Products = AllServices;
-                return View(serviceViewModel);
+                return NotFound();
             }
-            ServiceListDetailViewModel ServiceViewModel = new ServiceListDetailViewModel();
-            var ServiceModel = await _context.Service
-                .Include(p => p.ServiceCategory)
-                .FirstOrDefaultAsync(m => m.ID == id);
-            ServiceViewModel.Description = ServiceModel.Discription;
-            ServiceViewModel.Picture = ServiceModel.picture;
-            ServiceViewModel.Name = ServiceModel.Name;
-            ServiceViewModel.Price = ServiceModel.price;
-            ServiceViewModel.ProductCategoryID = ServiceModel.ProductCategoryID;
+                ServiceListDetailViewModel ServiceViewModel = new ServiceListDetailViewModel();
+                var ServiceModel = await _context.Service
+                    .Include(p => p.ServiceCategory)
+                    .FirstOrDefaultAsync(m => m.ID == id);
+                ServiceViewModel.Description = ServiceModel.Discription;
+                ServiceViewModel.Picture = ServiceModel.picture;
+                ServiceViewModel.Name = ServiceModel.Name;
+                ServiceViewModel.Price = ServiceModel.price;
+                ServiceViewModel.ProductCategoryID = ServiceModel.ProductCategoryID;
 
-            var AllProducts = await _context.Service.Where(p => p.ID==id).ToListAsync();
-            ServiceViewModel.Products = AllProducts;
+                var AllProducts = await _context.Service.Where(p => p.ID == id).ToListAsync();
+                ServiceViewModel.Products = AllProducts;
 
-            return View(ServiceViewModel);
+                return View(ServiceViewModel);
+
+            
         }
 
         //public async Task<IActionResult> Services(int? id)

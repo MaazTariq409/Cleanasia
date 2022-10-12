@@ -1,0 +1,66 @@
+﻿@model Cleanasia.ViewModels.ServiceListDetailViewModel
+
+@{
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+<link href="~/ServiceDetailCss/css/main.css" rel="stylesheet">
+
+<!-- Breadcrumb Start -->
+<div class="container-fluid">
+    <div class="row px-xl-5">
+        <div class="col-12">
+            <nav class="breadcrumb bg-light mb-30">
+                <a class="breadcrumb-item text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                <span class="breadcrumb-item active">Services</span>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+<!-- Services -->
+<div class="container">
+    @foreach (var item in Model.Products)
+    {
+        <div class="wrapper row">
+            <div class="preview col-md-6 card">
+                <a><img src="../../uploadsPic/@item.picture" height="600" alt=""></a>
+            </div>
+            <div class="details col-md-6 card">
+                <h3 class="product-title">@item.Name</h3>
+                <div class="rating">
+                    <div class="stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <span class="review-no">41 reviews</span>
+                </div>
+                <p class="product-description">@item.Discription</p>
+                <h4 class="price">Service Charges: <span>Rs. @item.price</span></h4>
+                <p class="vote"><strong>91%</strong> of people loved this service <strong>(87 votes)</strong></p>
+                <div class="action">
+                    <ul>
+                        <a class="add-to-cart btn btn-default" asp-controller="BookingService" asp-action="Create" asp-route-id="@item.ID">Hire</a>
+                        <a href="#" class="like btn btn-default fa fa-heart"></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @*<div class="col-md-4">
+            <div class="product-item">
+            <a href="#"><img src="../../uploadsPic/@item.picture" height="200" alt=""></a>
+            <div class="down-content">
+            <a href="#"><h4>@item.Name</h4></a>
+            <p>@item.Discription</p>
+            <p>@item.PhoneNumber</p>
+            </div>
+            </div>
+            </div>*@
+    }
+</div>

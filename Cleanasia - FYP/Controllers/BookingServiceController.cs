@@ -77,7 +77,41 @@ namespace Cleanasia.Controllers
                 ViewBag.Message = "The Booking Confirmation message will be sent via Email";
             }
             //return View(booking);
-            return RedirectToAction("Services", "Home");
+            return RedirectToAction("allServices", "Home");
+        }
+
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var categoryModel = await _context.category
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (categoryModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(categoryModel);
+        }
+
+        // POST: Category/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var categoryModel = await _context.category.FindAsync(id);
+            _context.category.Remove(categoryModel);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool CategoryModelExists(int id)
+        {
+            return _context.category.Any(e => e.ID == id);
         }
     }
 }

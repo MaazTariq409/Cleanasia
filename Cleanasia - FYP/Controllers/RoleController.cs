@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cleanasia.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "admin")]
     public class RoleController : Controller
     {
         RoleManager<IdentityRole> roleManager;
