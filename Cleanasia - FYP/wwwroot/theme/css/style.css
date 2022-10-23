@@ -229,8 +229,9 @@ ul{
     display: inline-block;
     padding: 35px;
     background: #ddd;
+
 }
-.service-details h4 {
+    .service-details h4 {
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;

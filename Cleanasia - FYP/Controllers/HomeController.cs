@@ -68,27 +68,6 @@ namespace Cleanasia.Controllers
             
         }
 
-        //public async Task<IActionResult> Services(int? id)
-        //{
-
-        //    ServiceListDetailViewModel ServiceViewModel = new ServiceListDetailViewModel();
-        //    var ServiceModel = await _context.Service
-        //        .Include(p => p.ServiceCategory)
-        //        .FirstOrDefaultAsync(m => m.ID == id);
-        //    ServiceViewModel.Id = ServiceModel.ID;
-
-        //    ServiceViewModel.Description = ServiceModel.Discription;
-        //    ServiceViewModel.Picture = ServiceModel.picture;
-        //    ServiceViewModel.Name = ServiceModel.Name;
-        //    ServiceViewModel.ProductCategoryID = ServiceModel.ProductCategoryID;
-        //    ServiceViewModel.Quantity = 1;
-
-        //    var AllProducts = await _context.Service.Include(p => p.ServiceCategory).ToListAsync();
-        //    ServiceViewModel.Products = AllProducts;
-
-        //    return View(ServiceViewModel);
-        //}
-
         public IActionResult Privacy()
         {
             return View();
