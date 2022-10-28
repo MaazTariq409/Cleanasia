@@ -21,10 +21,10 @@ namespace Cleanasia.Controllers
             _context = context;
         }
 
-        //public async Task<IActionResult> Index()
-        //{
-        //    return View(await _context.category.ToListAsync());
-        //}
+        public async Task<IActionResult> OrderList()
+        {
+            return View(await _context.bookingService.ToListAsync());
+        }
 
         public async Task<IActionResult> Index()
         {

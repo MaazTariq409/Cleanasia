@@ -76,8 +76,8 @@ namespace Cleanasia.Controllers
                 await _context.SaveChangesAsync();
                 ViewBag.Message = "The Booking Confirmation message will be sent via Email";
             }
-            //return View(booking);
-            return RedirectToAction("allServices", "Home");
+            return View(booking);
+            //return RedirectToAction("allServices", "Home");
         }
 
 
